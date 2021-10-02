@@ -48,7 +48,7 @@ export class AccountingService {
 	// 	}
 	// }
 
-	@Cron('31 14 * * *', { timeZone: 'Asia/Jakarta' })
+	@Cron('* * * * *', { timeZone: 'Asia/Jakarta' })
 	// @Cron('0 1 * * *', { timeZone: 'Asia/Jakarta' })
 	// @Timeout(1000)
 	async activatingStatusDate() {
@@ -56,7 +56,7 @@ export class AccountingService {
 			const { currDate, currMonth: month } = this.getInfoTime();
 			const accounting = await this.model.findOne({ month: 'september' });
 			accounting.history.map((acc) => {
-				if (acc.date <= 30) acc.isActive = false;
+				if (acc.date <= 30) acc.isActive = true;
 			});
 			await new this.model(accounting).save();
 		} catch (error) {

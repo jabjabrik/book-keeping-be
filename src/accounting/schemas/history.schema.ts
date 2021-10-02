@@ -18,5 +18,5 @@ export class History {
 	currentBalance: number;
 
 	@Prop({ type: Boolean, required: true })
-	isActive: boolean;
+	isActive: boolean | string | number;
 }

@@ -48,9 +48,9 @@ export class AccountingService {
 	// 	}
 	// }
 
-	@Cron('4 14 * * *', { timeZone: 'Asia/Jakarta' })
+	// @Cron('4 14 * * *', { timeZone: 'Asia/Jakarta' })
 	// @Cron('0 1 * * *', { timeZone: 'Asia/Jakarta' })
-	// @Timeout(1000)
+	@Timeout(1000)
 	async activatingStatusDate() {
 		try {
 			const { currDate, currMonth: month } = this.getInfoTime();

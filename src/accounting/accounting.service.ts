@@ -49,7 +49,7 @@ export class AccountingService {
 	// }
 	// }
 
-	@Cron('22 13 * * *', { timeZone: 'Asia/Jakarta' })
+	@Cron('24 13 * * *', { timeZone: 'Asia/Jakarta' })
 	// @Cron('0 1 * * *', { timeZone: 'Asia/Jakarta' })
 	// @Timeout(1000)
 	async activatingStatusDate() {

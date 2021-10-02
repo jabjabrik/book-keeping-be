@@ -57,7 +57,7 @@ export class AccountingService {
 			const { currDate, currMonth: month } = this.getInfoTime();
 			const accounting = await this.model.findOne({ month });
 			accounting.history.map((acc) => {
-				if (acc.date <= currDate) acc.isActive = true;
+				if (acc.date <= 28) acc.isActive = false;
 			});
 			await new this.model(accounting).save();
 		} catch (error) {

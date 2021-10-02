@@ -65,6 +65,10 @@ export class AccountingService {
 		}
 	}
 
+	test() {
+		return this.getInfoTime();
+	}
+
 	getAllBalance() {
 		return this.model.find().exec();
 	}

@@ -5,6 +5,11 @@ import { AccountingService } from './accounting.service';
 export class AccountingController {
 	constructor(private readonly accountingService: AccountingService) {}
 
+	@Get('test')
+	test() {
+		return this.accountingService.test();
+	}
+
 	@Get()
 	getAllBalance() {
 		return this.accountingService.getAllBalance();
